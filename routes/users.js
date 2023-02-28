@@ -1,11 +1,10 @@
 const router = require('koa-router')()
-const userService = require('../service/user.service');
+const userService = require('../service/users.service');
 
-router.prefix('/users')
+router.prefix('/api')
 
-router.get('/', function (ctx, next) {
-  ctx.body = userService.isExist()
-  ctx.body = 'this is a users response!'
+router.get('/login', async function (ctx, next) {
+  ctx.body = await userService.isExist()
 })
 
 router.get('/bar', function (ctx, next) {

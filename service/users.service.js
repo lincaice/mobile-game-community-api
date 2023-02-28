@@ -1,4 +1,4 @@
-const userDB = require('../dao/user');
+const userDB = require('../dao/usersMapper');
 
 class UserService {
   async isExist() {
