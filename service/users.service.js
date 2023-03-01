@@ -1,9 +1,8 @@
 const userDB = require('../dao/usersMapper');
 
 class UserService {
-  async isExist() {
-    const { usersInfo } = await userDB.getUserInfo()
-    console.log(usersInfo);
+  async loginHandle(username, password) {
+    const usersInfo = await userDB.getPswByAccount();
     return {
       usersInfo
     }
