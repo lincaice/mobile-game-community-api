@@ -8,7 +8,7 @@ class UserDB {
    * @returns {Array<{password:string}>} 用户密码数组
    */
   async getPswByAccount(str) {
-    const state = `SELECT password FROM users WHERE user_account = ?`;
+    const state = `SELECT password FROM user WHERE user_account = ?`;
     const [usersInfo] = await promisePool.execute(state, [str]);
     console.log(usersInfo);
     return usersInfo;
